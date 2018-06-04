@@ -1,0 +1,149 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Filter Authors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.css"/>
+</head>
+<body>
+    <div class="container">
+        <h1 class="center-align">
+            Authors
+        </h1>
+        <input type="text" id="filterInput" placeholder="Search Authors names...">
+        <ul id="names" class="collection with-header">
+            <li class="collection-header">
+                <h5>A</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">Adam</a>
+            </li>    
+            <li class="collection-item">
+                <a href="#">Adria</a>
+            </li>    
+            <li class="collection-item">
+                <a href="#">Alex</a>
+            </li>    
+            <li class="collection-item">
+                <a href="#">Alice</a>
+            </li>    
+            <li class="collection-item">
+                <a href="#">Annie</a>
+            </li>    
+            <li class="collection-item">
+                <a href="#">Asunta</a> 
+            </li>    
+            <li class="collection-header">
+                <h5>B</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">Ben</a>
+            </li>    
+            <li class="collection-item">
+                <a href="#">Beryl</a>
+            </li>    
+            <li class="collection-item">
+                <a href="#">Brenda</a>
+            </li>    
+            <li class="collection-item">
+                <a href="#">Brian</a>
+            </li>    
+            <li class="collection-item">
+                <a href="#">Bonnie</a>
+            </li>    
+            <li class="collection-item">
+                <a href="#">Byron</a> 
+            </li>    
+            <li class="collection-header">
+                <h5>C</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">Camile</a>
+            </li>    
+            <li class="collection-item">
+                <a href="#">Caroline</a>
+            </li>    
+            <li class="collection-item">
+                <a href="#">Catherine</a>
+            </li>    
+            <li class="collection-item">
+                <a href="#">Cedric</a>
+            </li>    
+            <li class="collection-item">
+                <a href="#">Chloe</a>
+            </li>    
+            <li class="collection-item">
+                <a href="#">Conrad</a> 
+            </li>    
+            <li class="collection-header">
+                <h5>D</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">Damien</a>
+            </li>    
+            <li class="collection-item">
+                <a href="#">Daniel</a>
+            </li>    
+            <li class="collection-item">
+                <a href="#">Dante</a>
+            </li>    
+            <li class="collection-item">
+                <a href="#">Dennis</a>
+            </li>    
+            <li class="collection-item">
+                <a href="#">Dexter</a>
+            </li>    
+            <li class="collection-item">
+                <a href="#">Dorian</a> 
+            </li>    
+            <li class="collection-header">
+                <h5>E</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">Eclair</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Elias</a> 
+            </li>
+            <li class="collection-item">
+                <a href="#">Emily</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Eric</a>
+            </li>  
+            <li class="collection-item">
+                <a href="#">Erica</a>
+            </li>    
+            <li class="collection-item">
+                <a href="#">Esther</a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        let filterInput = document.getElementById('filterInput'); 
+        filterInput.addEventListener('keyup', filterNames);
+
+    function filterNames(){
+    // console.log(1);
+    let filterValue = document.getElementById('filterInput').value.toUpperCase(); 
+    let ul= document.getElementById('names')
+    let li= ul.querySelectorAll('li.collection-item');
+
+    for(let i= 0; i <li.length; i++){
+        let a = li[i].getElementsByTagName('a')[0];
+
+        if(a.innerHTML.toUpperCase().indexOf(filterValue)> -1){
+            li[i].style.display = '';
+
+        }else{
+            li[i].style.display = 'none';
+
+        }
+    }
+}
+    </script>
+</body>
+</html>
